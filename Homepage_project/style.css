@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+  background-color: rgb(241, 247, 247);
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+nav {
+  justify-content: flex-end;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 0 10px;
+  font-size: 16px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+main {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.content {
+  width: 80%;
+  margin: auto;
+}
+
+.slider {
+  display: flex;
+  width: 250%;
+  /* Adjust the width based on the number of slides */
+  animation: slideShow 60s linear infinite;
+  /* Adjust the duration as needed */
+  height: fit-content;
+}
+
+@keyframes slideShow {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.slide {
+  flex: 0 0 30%;
+  /* Adjust the width based on the number of slides */
+  text-align: center;
+  padding: 50px;
+  color: white;
+  opacity: 0;
+  animation: slideIn forwards;
+  margin-right: 30px;
+  /* Adjust the gap between slides */
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.slide .title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.slide p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.slide:nth-child(odd) {
+  background-image: url('https://www.computersciencedegreehub.com/wp-content/uploads/2023/02/shutterstock_535124956-scaled.jpg');
+  /* Add your image paths */
+}
+
+.slide:nth-child(even) {
+  background-image: url('https://source.unsplash.com/1600x900/?coding');
+  /* Add your image paths */
+}
+
+.slide:hover {
+  transform: translateX(-5%);
+}
+
+/* Media Query for Responsive Design */
+@media only screen and (max-width: 400px) {
+  .content {
+    width: 90%; /* Adjusted width for better mobile experience */
+  }
+
+  .slider {
+    width: 100%; /* Full width for better mobile experience */
+  }
+
+  .slide {
+    flex: 0 0 90%; /* Adjusted width for better mobile experience */
+    margin-right: 0;
+    padding: 20px;
+  }
+}
